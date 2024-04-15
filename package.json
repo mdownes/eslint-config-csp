@@ -1,0 +1,35 @@
+{
+  "name": "eslint-config-csp",
+  "version": "1.0.0",
+  "description": "A sharable EsLint configuration plugin to catch Content Security Policy violations",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslintconfig",
+    "eslint-config-csp",
+    "eslint content security policy"
+  ],
+  "author": "Maurice Downes (https://advancedfrontends.com/)",
+  "main": "./index.js",
+  "exports": "./index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "test": "jest ./tests/index.test.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdownes/eslint-config-csp.git"
+  },
+  "files": [
+    "index.js",
+    "package.json"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "8.56",
+    "jest": "^29.7.0"
+  }
+}
