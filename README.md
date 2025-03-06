@@ -35,4 +35,19 @@ Add `eslint-config-csp` to the extends section of your `.eslintrc` configuration
 }
 ```
 
+## Eslint Flat Config Usage
+```javascript
+import cspConfig from 'eslint-config-csp';
+
+
+export default [
+    {
+        languageOptions:{...}
+    },
+    cspConfig,
+    {...}
+]
+```
+
+
 
