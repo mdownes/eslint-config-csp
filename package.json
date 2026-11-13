@@ -1,37 +1,89 @@
 {
-  "name": "eslint-config-csp",
-  "version": "1.0.1",
-  "description": "A sharable EsLint configuration plugin to catch Content Security Policy violations",
+  "name": "eslint-plugin-csp",
+  "version": "2.0.0",
+  "description": "ESLint plugin that flags Content Security Policy violations in JavaScript, TypeScript, Lit templates, and HTML",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslintconfig",
-    "eslint-config-csp",
-    "eslint content security policy",
-    "content security policy",
-    "CSP"
+    "eslint-plugin",
+    "csp",
+    "content-security-policy",
+    "lit",
+    "security",
+    "html",
+    "trusted-types"
   ],
   "author": "Maurice Downes (https://advancedfrontends.com/)",
-  "main": "./index.js",
-  "exports": "./index.js",
-  "scripts": {
-    "lint": "eslint . --ext .js",
-    "test": "jest ./tests/index.test.js"
-  },
-  "peerDependencies": {
-    "eslint": ">=8"
-  },
+  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mdownes/eslint-config-csp.git"
+    "url": "git+https://github.com/mdownes/eslint-plugin-csp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mdownes/eslint-plugin-csp/issues"
+  },
+  "homepage": "https://github.com/mdownes/eslint-plugin-csp#readme",
+  "type": "commonjs",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "index.js",
-    "package.json"
+    "index.d.ts",
+    "lib",
+    "docs",
+    "MIGRATION.md",
+    "README.md",
+    "LICENSE"
   ],
-  "license": "ISC",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "peerDependencies": {
+    "@html-eslint/eslint-plugin": ">=0.41.0",
+    "@html-eslint/parser": ">=0.41.0",
+    "eslint": ">=8.57.0"
+  },
+  "peerDependenciesMeta": {
+    "@html-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@html-eslint/parser": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "parse5": "^6.0.1"
+  },
   "devDependencies": {
-    "eslint": "8.56",
-    "jest": "^29.7.0"
+    "@eslint/js": "^10.0.1",
+    "@html-eslint/eslint-plugin": "^0.67.0",
+    "@html-eslint/parser": "^0.67.0",
+    "@typescript-eslint/parser": "^8.72.2",
+    "eslint": "^10.14.0",
+    "globals": "^15.15.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.9.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
   }
 }
